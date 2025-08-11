@@ -85,12 +85,14 @@ const Todo = () => {
                     {item.text}
                   </Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => startEdit(item.id, item.text)}>
-                  <Text>✏️</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => deleteTask(item.id)}>
-                  <Text style={styles.deleteButton}>🗑️</Text>
-                </TouchableOpacity>
+                <View style={styles.inputRow}>
+                  <TouchableOpacity onPress={() => startEdit(item.id, item.text)}>
+                    <Text style={styles.editButton}> ✏️ </Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress={() => deleteTask(item.id)}>
+                    <Text style={styles.deleteButton}>🗑️</Text>
+                  </TouchableOpacity>
+                </View>
               </>
             )}
           </View>
@@ -152,6 +154,10 @@ const styles = StyleSheet.create({
   deleteButton: {
     fontSize: 20,
     color: 'red',
+  },
+  editButton:{
+    fontSize: 20,
+    color: 'grey',
   },
 });
 
